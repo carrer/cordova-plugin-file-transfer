@@ -431,7 +431,7 @@ public class FileTransfer extends CordovaPlugin {
                     // http://code.google.com/p/android/issues/detail?id=3164
                     // It also causes OOM if HTTPS is used, even on newer devices.
                     boolean useChunkedMode = chunkedMode || (Build.VERSION.SDK_INT < Build.VERSION_CODES.FROYO || useHttps);
-                    useChunkedMode = useChunkedMode || (fixedLength == -1);
+                    useChunkedMode = false;//useChunkedMode || (fixedLength == -1);
 
                     if (useChunkedMode) {
                         conn.setChunkedStreamingMode(MAX_BUFFER_SIZE);
