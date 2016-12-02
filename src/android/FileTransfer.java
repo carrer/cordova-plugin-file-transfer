@@ -286,7 +286,7 @@ public class FileTransfer extends CordovaPlugin {
         final JSONObject params = args.optJSONObject(5) == null ? new JSONObject() : args.optJSONObject(5);
         final boolean trustEveryone = args.optBoolean(6);
         // Always use chunked mode unless set to false as per API
-        final boolean chunkedMode = args.optBoolean(7) || args.isNull(7);
+        final boolean chunkedMode = false;//args.optBoolean(7) || args.isNull(7);
         // Look for headers on the params map for backwards compatibility with older Cordova versions.
         final JSONObject headers = args.optJSONObject(8) == null ? params.optJSONObject("headers") : args.optJSONObject(8);
         final String objectId = args.getString(9);
